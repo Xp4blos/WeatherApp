@@ -1,0 +1,24 @@
+<app-header></app-header>
+<main>
+  <section class="time">
+    <div class="date">
+      <div class="day">
+        <h2>{{ hours }}</h2>
+      </div>
+      <div class="month">
+        <h2 class="text-xxl">{{ minutes }}</h2>
+      </div>
+    </div>
+    <div class="year">
+      <h2>{{ displayDate | date : "dd/MM/YYYY" }}</h2>
+    </div>
+  </section>
+
+  <div class="title">
+    <h1>
+      What is the weather like
+      <span> in == </span>
+    </h1>
+  </div>
+</main>
+<app-weather></app-weather>

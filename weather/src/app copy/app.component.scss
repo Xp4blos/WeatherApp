@@ -1,0 +1,101 @@
+*{
+    font-family: 'Inter', sans-serif;
+}
+main{
+    background-image: url(../assets/chaos.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+   
+    width: 100vw;
+    .time{
+        display: flex;
+        justify-content: space-between;
+    
+   
+  
+    .date{
+        margin: 3rem;
+    }
+    .date > *{
+        display: inline-block;
+        border: 1px solid;
+        border-radius: 100%;
+        padding: 0.5rem;
+        margin: 0.2rem;
+        color: rgb(58, 58, 58);
+      
+    }
+
+    .year{
+        writing-mode: vertical-lr;
+        text-orientation:upright;
+        margin: 3rem 3rem 0 3rem;
+        h2{
+            font-size: 2.5rem;
+            font-weight: normal;
+            font-weight: normal;
+            
+        }
+    }
+
+
+
+}
+    .title{
+     
+        margin-top: 0.5rem;
+  
+        h1{
+
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: rgb(58, 58, 58);
+            margin-left: 1rem;
+            span{
+                padding: 0.2rem;
+                background-color: rgba(238, 178, 255, 0.644);
+                display: block;
+               
+            }
+           
+           
+        }
+        
+    
+    }
+
+}
+
+@media (min-width: 600px) {
+    main{
+        .title{
+           
+            h1{
+                margin-left: 5rem;
+                font-size: 3rem;
+            }
+        }
+    }
+    
+}
+
+@media (min-width: 960px) {
+    main{
+        .title{
+            h1{
+                margin-left: 10rem;
+                font-size: 3.25rem;
+            }
+        }
+    }
+    
+}
+@media (min-width: 1930px) {
+
+    .time{
+        margin-top: 3rem;
+        padding: 2rem;
+        margin-bottom: 5rem;
+    }
+    
+}
