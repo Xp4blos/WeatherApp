@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Koulen&display=swap");
 // font-family: 'Inter', sans-serif;
-// font-family: 'Koulen', sans-serif;
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+// font-family: 'Koulen', sans-serif;
+@import "tailwindcss";
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 body {
@@ -15,9 +16,17 @@ body {
   background: rgb(255, 255, 238);
   background-image: radial-gradient(rgb(147, 147, 147) 1px, transparent 0);
   background-size: 20px 20px;
+  background-attachment: fixed;
   background-position: -9px -9px;
 }
 img {
   max-width: 100%;
   max-width: 100%;
+}
+
+.roboto-mono-400 {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }

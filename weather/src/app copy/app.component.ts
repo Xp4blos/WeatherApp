@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { WeatherService } from './core/services/weather.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,15 +8,22 @@ import { OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'WeatherApp';
-
+  constructor(private weather: WeatherService) {}
   date: Date = new Date();
   displayDate: string = this.date.toLocaleDateString();
   hours: string = this.date.getHours().toString();
   minutes: string = '';
+  location: string = 'Unknown Location';
   timer: any;
   ngOnInit(): void {
+    this.weather.location$.subscribe({
+      next: (location) => {
+        this.location = location;
+        console.log('Weather Location Subject: ', this.location);
+      },
+    });
+
     this.updateTime();
-    console.log(this.date.getHours());
     this.timer = setInterval(() => {
       this.updateTime();
     }, 1000);

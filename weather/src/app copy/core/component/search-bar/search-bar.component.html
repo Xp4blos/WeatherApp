@@ -1,0 +1,18 @@
+<section class="search-bar text-center p-6 flex justify-center">
+  <form
+    #form="ngForm"
+    (ngSubmit)="searchSubmit()"
+    class="bar p-2 px-5 rounded-full flex items-center"
+  >
+    <input
+      placeholder="Search for a city"
+      type="text"
+      class="p-2 md:text-xl"
+      [(ngModel)]="searchbar"
+      name="searchbar"
+    />
+    <button class="cursor-pointer" type="submit">
+      <img class="w-8" src="icons/search.png" alt="glass icon" />
+    </button>
+  </form>
+</section>

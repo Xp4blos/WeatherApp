@@ -1,1 +1,117 @@
-<p>weather works!</p>
+@if(currentWeather){
+<section
+  class="weather md:text-3xl p-4 md:p-18 roboto-mono-400 max-w-[1500px] mx-auto"
+>
+  <div class="weather-info p-8">
+    <h2 class="my-1">Temp: {{ currentWeather.main.temp }} &deg;C</h2>
+    <h2 class="my-1">
+      Feels_like: {{ currentWeather.main.feels_like }} &deg;C
+    </h2>
+    <h2 class="my-1">Min: {{ currentWeather.main.temp_min }} &deg;C</h2>
+    <h2 class="my-1">Max: {{ currentWeather.main.temp_max }} &deg;C</h2>
+    <h2 class="my-1">Pressure: {{ currentWeather.main.pressure }} hPa</h2>
+  </div>
+  <div class="flex flex-col lg:flex-row align-center justify-between">
+    <div class="weather-info p-8 my-8 mr-4 lg:w-1/3">
+      <h2 class="mb-4">Weather</h2>
+      <div class="flex flex-col items-center justify-center h-full pb-12">
+        <img
+          [src]="'./weatherIcons/' + currentWeather.weather[0].icon + '.png'"
+          alt="weather icon"
+        />
+        <h2 class="capitalize text-center">
+          {{ currentWeather.weather[0].description }}
+        </h2>
+      </div>
+    </div>
+    <div class="weather-info p-8 my-8 mx-4 lg:w-1/3">
+      <h2 class="mb-4">Wind</h2>
+      <h2 class="my-1">Speed: {{ currentWeather.wind.speed }} m/s</h2>
+      <h2 class="my-1">Deg: {{ currentWeather.wind.deg }}&deg;</h2>
+      <br />
+      <h2 class="text-red-600">N</h2>
+      <img
+        class="arrow mx-auto"
+        [style]="'transform: rotate(' + currentWeather.wind.deg + 'deg)'"
+        src="./icons/up.png"
+        alt=""
+      />
+    </div>
+    <div class="weather-info p-8 my-8 ml-4 lg:w-1/3">
+      <h2 class="mb-4">Clouds</h2>
+      <h2 class="my-1">Cloud_cover: {{ currentWeather.clouds.all }}%</h2>
+      @if (currentWeather.rain) {
+      <h2 class="my-1">Rain [1h]: {{ currentWeather.rain["1h"] }} mm/h</h2>
+      } @else {
+      <h2 class="my-1">Rain [1h]: 0 mm/h</h2>
+
+      }
+      <h2 class="my-1">Humidity: {{ currentWeather.main.humidity }}%</h2>
+    </div>
+  </div>
+  <div class="weather-info p-8">
+    <h2 class="mb-12">Sun</h2>
+    <div class="flex flex-row justify-around items-center">
+      <div>
+        <img class="w-24 mx-auto" src="./icons/sunrise.png" alt="" />
+        <h2 class="text-center m-2">
+          {{ sun.sunrise | date : "shortTime" }}
+        </h2>
+      </div>
+      <div>
+        <img class="w-24 mx-auto" src="./icons/sunset.png" alt="" />
+        <h2 class="text-center m-2">
+          {{ sun.sunset | date : "shortTime" }}
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+}
+<!-- Example Json response -->
+<!-- {
+    "coord": {
+        "lon": 18.9664,
+        "lat": 50.1372
+    },
+    "weather": [
+        {
+            "id": 801,
+            "main": "Clouds",
+            "description": "few clouds",
+            "icon": "02n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 16.13,
+        "feels_like": 15.76,
+        "temp_min": 16.13,
+        "temp_max": 16.27,
+        "pressure": 1020,
+        "humidity": 75,
+        "sea_level": 1020,
+        "grnd_level": 992
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.7,
+        "deg": 148,
+        "gust": 2.22
+    },
+    "clouds": {
+        "all": 17
+    },
+    "dt": 1754602516,
+    "sys": {
+        "type": 2,
+        "id": 265494,
+        "country": "PL",
+        "sunrise": 1754536899,
+        "sunset": 1754590692
+    },
+    "timezone": 7200,
+    "id": 3082914,
+    "name": "Tychy",
+    "cod": 200
+} -->
