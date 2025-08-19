@@ -1,0 +1,28 @@
+<section class="countries p-6 roboto-mono-400">
+  <div>
+    <a routerLink="currencySearch" class="underline text-blue-600"
+      >Search Countries with different currency</a
+    >
+    <router-outlet></router-outlet>
+  </div>
+  @if (errorMessage) {
+  <p class="p-4">{{ errorMessage }}</p>
+  } @else {
+
+  <h1 class="text-center text-2xl">Countries</h1>
+
+  <p>Countries with {{ currency }}</p>
+  <div class="list">
+    @for (country of countries; track $index) {
+    <div class="p-4 m-2">
+      <h1 class="font-bold">{{ country.name.official }}</h1>
+      <p>Population {{ country.population }}</p>
+      @if (country.isOver10m) {
+      <hr style="border: 2px solid green" />
+      <p class="text-green-600">Population over 10 million</p>
+      }
+    </div>
+    }
+  </div>
+  }
+</section>

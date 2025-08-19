@@ -30,8 +30,6 @@ export class WeatherComponent implements OnInit {
             this.currentWeather = data;
             this.sun.sunrise = new Date(data.sys.sunrise * 1000);
             this.sun.sunset = new Date(data.sys.sunset * 1000);
-            console.log('Sunrise:', this.sun.sunrise);
-            console.log('Sunset:', this.sun.sunset);
           },
           error: (error) => {
             console.error('Error fetching weather data:', error);
