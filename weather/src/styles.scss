@@ -5,8 +5,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
 // font-family: 'Koulen', sans-serif;
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 body {

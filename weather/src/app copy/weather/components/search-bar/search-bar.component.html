@@ -7,12 +7,17 @@
     <input
       placeholder="Search for a city"
       type="text"
-      class="p-2 md:text-xl"
+      class="p-2 md:text-xl border-0 bg-transparent"
       [(ngModel)]="searchbar"
       name="searchbar"
     />
-    <button class="cursor-pointer" type="submit">
-      <img class="w-8" src="icons/search.png" alt="glass icon" />
+    <button class="cursor-pointer bg-transparent border-0" type="submit">
+      <img
+        class="w-4"
+        style="width: 4rem"
+        src="icons/search.png"
+        alt="glass icon"
+      />
     </button>
   </form>
 </section>

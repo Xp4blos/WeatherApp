@@ -25,5 +25,20 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": [
+        "https://api.openweathermap.org/data/2.5/weather*",
+        "https://api.openweathermap.org/data/2.5/forecast*"
+      ],
+      "cacheConfig": {
+        "maxSize": 100,
+        "maxAge": "1d",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
   ]
 }
