@@ -6,34 +6,6 @@ import { WeatherService } from './core/services/weather.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'WeatherApp';
-  constructor(private weather: WeatherService) {}
-  date: Date = new Date();
-  displayDate: string = this.date.toLocaleDateString();
-  hours: string = this.date.getHours().toString();
-  minutes: string = '';
-  location: string = 'Unknown Location';
-  timer: any;
-  ngOnInit(): void {
-    this.weather.location$.subscribe({
-      next: (location) => {
-        this.location = location;
-        console.log('Weather Location Subject: ', this.location);
-      },
-    });
-
-    this.updateTime();
-    this.timer = setInterval(() => {
-      this.updateTime();
-    }, 1000);
-  }
-  private updateTime(): void {
-    this.date = new Date();
-    this.hours = this.date.getHours().toString();
-    this.minutes =
-      this.date.getMinutes() < 10
-        ? '0' + this.date.getMinutes().toString()
-        : this.date.getMinutes().toString();
-  }
 }
