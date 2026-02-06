@@ -16,4 +16,4 @@ Aplikacja pogodowa zbudowana w oparciu o framework **Angular**. Projekt pozwala 
 - **Frontend:** Angular (wersja [wpisz swoją, np. 17/18])
 - **Język:** TypeScript
 - **Stylizacja:** Tailwind
-- **API:** [OpenWeatherMap API](https://openweathermap.org/) (lub inne)
+- **API:** [OpenWeatherMap API](https://openweathermap.org/)
