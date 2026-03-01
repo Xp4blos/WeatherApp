@@ -13,7 +13,7 @@ Aplikacja pogodowa zbudowana w oparciu o framework **Angular**. Projekt pozwala 
 - **Responsywny design:** Aplikacja działa płynnie na komputerach, tabletach i smartfonach.
 
 ## 🚀 Technologie
-- **Frontend:** Angular (wersja [wpisz swoją, np. 17/18])
+- **Frontend:** Angular
 - **Język:** TypeScript
 - **Stylizacja:** Tailwind
 - **API:** [OpenWeatherMap API](https://openweathermap.org/)
